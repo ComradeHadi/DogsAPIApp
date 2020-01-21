@@ -1,9 +1,7 @@
 package com.hadi.dogsapi
 
 import android.app.Application
-import com.hadi.dogsapi.dagger.AppComponent
-import com.hadi.dogsapi.dagger.AppModule
-import com.hadi.dogsapi.dagger.DaggerAppComponent
+
 
 /**
  * @author comrade hadi

@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.hadi.dogsapi.NavigationUtils
 import com.hadi.dogsapi.R
 import com.hadi.dogsapi.data.DataClasses
-import com.hadi.dogsapi.databinding.FragmentSubbreedImagesBinding
+import com.hadi.dogsapi.databinding.FragmentSubbreedImageBinding
 import com.hadi.dogsapi.ui.adapters.BreedImageAdapter
 import com.hadi.dogsapi.viewModels.SubBreedImageViewModel
 
@@ -27,7 +27,7 @@ class SubBreedImageFragment: BaseFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val binding: FragmentSubbreedImagesBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_subbreed_images, container, false)
+        val binding: FragmentSubbreedImageBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_subbreed_image, container, false)
         val imageAdapter = initViewPager(binding)
         initViewModel(binding, imageAdapter)
         binding.rootLayout.setOnClickListener { view ->  activity!!.onBackPressed()}
@@ -35,14 +35,14 @@ class SubBreedImageFragment: BaseFragment() {
         return binding.root
     }
 
-    private fun initViewPager(binding: FragmentSubbreedImagesBinding): BreedImageAdapter {
+    private fun initViewPager(binding: FragmentSubbreedImageBinding): BreedImageAdapter {
         val viewPager = binding.subBreedViewPager
         val imageAdapter = BreedImageAdapter(context)
         viewPager.adapter = imageAdapter
         return imageAdapter
     }
 
-    fun initViewModel(binding: FragmentSubbreedImagesBinding, adapter: BreedImageAdapter){
+    fun initViewModel(binding: FragmentSubbreedImageBinding, adapter: BreedImageAdapter){
         val subBreedImageViewModel = ViewModelProviders.of(this, viewModeFactory).get(SubBreedImageViewModel::class.java)
         binding.viewModel = subBreedImageViewModel
         subBreedImageViewModel.subBreed = getStringFromArgs()
