@@ -1,4 +1,4 @@
-package com.hadi.dogsapi.dagger
+package com.hadi.dogsapi.di
 
 import android.app.Application
 import android.content.Context

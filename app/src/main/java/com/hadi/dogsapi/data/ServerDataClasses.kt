@@ -7,7 +7,7 @@ import com.google.gson.JsonObject
 import com.google.gson.annotations.SerializedName
 
 
-class DataClasses {
+class ServerDataClasses {
 
     data class DataState(var isFailed: Boolean)
 

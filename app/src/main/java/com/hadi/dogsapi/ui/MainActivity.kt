@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.hadi.dogsapi.NavigationUtils
 import com.hadi.dogsapi.R
-import com.hadi.dogsapi.data.DataClasses
+import com.hadi.dogsapi.data.ServerDataClasses
 import com.hadi.dogsapi.databinding.ActivityMainBinding
 import com.hadi.dogsapi.ui.adapters.BaseListAdapter
 import com.hadi.dogsapi.ui.adapters.BreedsListAdapter
@@ -56,7 +56,7 @@ class MainActivity : BaseActivity(), BaseListAdapter.OnBreedClickListener {
         listViewModel = ViewModelProviders.of(this, viewModeFactory).get(ListViewModel::class.java)
         activityMainBinding.viewModel = listViewModel
 
-        listViewModel.getBreedsLiveData().observe(this, Observer<List<DataClasses.Breed>> { breeds ->
+        listViewModel.getBreedsLiveData().observe(this, Observer<List<ServerDataClasses.Breed>> { breeds ->
             breeds?.let {
                 adapter.setItems(it)
             }

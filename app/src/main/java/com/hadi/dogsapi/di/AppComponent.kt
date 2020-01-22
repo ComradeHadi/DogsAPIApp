@@ -1,10 +1,8 @@
-package com.hadi.dogsapi.dagger
+package com.hadi.dogsapi.di
 
 import com.hadi.dogsapi.DogApplication
 import com.hadi.dogsapi.ui.BaseFragment
-import com.hadi.dogsapi.ui.BreedDetailFragment
 import com.hadi.dogsapi.ui.MainActivity
-import com.hadi.dogsapi.ui.SubBreedImageFragment
 import dagger.Component
 import javax.inject.Singleton
 

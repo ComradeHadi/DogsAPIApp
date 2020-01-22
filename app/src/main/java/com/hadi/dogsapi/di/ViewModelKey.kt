@@ -1,4 +1,4 @@
-package com.hadi.dogsapi.dagger
+package com.hadi.dogsapi.di
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey

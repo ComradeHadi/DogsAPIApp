@@ -9,7 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.hadi.dogsapi.NavigationUtils
 import com.hadi.dogsapi.R
-import com.hadi.dogsapi.data.DataClasses
+import com.hadi.dogsapi.data.ServerDataClasses
 import com.hadi.dogsapi.databinding.FragmentSubbreedImageBinding
 import com.hadi.dogsapi.ui.adapters.BreedImageAdapter
 import com.hadi.dogsapi.viewModels.SubBreedImageViewModel
@@ -61,9 +61,9 @@ class SubBreedImageFragment: BaseFragment() {
         return name
     }
 
-    private fun getBreedFromArgs(): DataClasses.Breed {
+    private fun getBreedFromArgs(): ServerDataClasses.Breed {
         val bundle = arguments
-        val breed = bundle?.get(NavigationUtils.BREED_KEY) as DataClasses.Breed
+        val breed = bundle?.get(NavigationUtils.BREED_KEY) as ServerDataClasses.Breed
         return breed
     }
 }

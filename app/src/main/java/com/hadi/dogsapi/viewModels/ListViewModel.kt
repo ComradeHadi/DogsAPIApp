@@ -5,9 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
-import com.hadi.dogsapi.data.DataClasses
-import com.hadi.dogsapi.network.DogApi
-import com.hadi.dogsapi.network.DogRepository
+import com.hadi.dogsapi.data.ServerDataClasses
 import com.hadi.dogsapi.network.DogRepositoryImpl
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -17,23 +15,23 @@ import javax.inject.Inject
  */
 class ListViewModel @Inject constructor(private val dogRepository: DogRepositoryImpl): ViewModel() {
 
-    private val breedList = mutableListOf<DataClasses.Breed>()
+    private val breedList = mutableListOf<ServerDataClasses.Breed>()
 
-    val dataStateLiveData: MutableLiveData<DataClasses.DataState> by lazy {
-        MutableLiveData<DataClasses.DataState>()
+    val dataStateLiveData: MutableLiveData<ServerDataClasses.DataState> by lazy {
+        MutableLiveData<ServerDataClasses.DataState>()
     }
 
-    private val breedsLiveData: MutableLiveData<List<DataClasses.Breed>> by lazy {
-        MutableLiveData<List<DataClasses.Breed>>().also {
+    private val breedsLiveData: MutableLiveData<List<ServerDataClasses.Breed>> by lazy {
+        MutableLiveData<List<ServerDataClasses.Breed>>().also {
             loadBreeds()
         }
     }
 
-    fun getBreedsLiveData(): LiveData<List<DataClasses.Breed>> {
+    fun getBreedsLiveData(): LiveData<List<ServerDataClasses.Breed>> {
         return breedsLiveData
     }
 
-    fun getDataStateLiveData(): LiveData<DataClasses.DataState> {
+    fun getDataStateLiveData(): LiveData<ServerDataClasses.DataState> {
         return dataStateLiveData
     }
 
@@ -45,10 +43,10 @@ class ListViewModel @Inject constructor(private val dogRepository: DogRepository
                 val subBreedArray = it.value.asJsonArray
                 val gson = Gson()
                 val subBreedList = gson.fromJson(subBreedArray, Array<String>::class.java).toList()
-                breedList.add(DataClasses.Breed(breedName, subBreedList))
+                breedList.add(ServerDataClasses.Breed(breedName, subBreedList))
             }
 
-            dataStateLiveData.value = DataClasses.DataState(breedList.isEmpty())
+            dataStateLiveData.value = ServerDataClasses.DataState(breedList.isEmpty())
             breedsLiveData.postValue(breedList)
         }
     }

@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hadi.dogsapi.NavigationUtils
 import com.hadi.dogsapi.R
-import com.hadi.dogsapi.data.DataClasses
+import com.hadi.dogsapi.data.ServerDataClasses
 import com.hadi.dogsapi.databinding.FragmentDetailBinding
 import com.hadi.dogsapi.ui.adapters.BaseListAdapter
 import com.hadi.dogsapi.ui.adapters.BreedImageAdapter
@@ -74,10 +74,10 @@ class BreedDetailFragment: BaseFragment(), BaseListAdapter.OnBreedClickListener 
         subBreedAdapter.setItems(detailViewModel.breed.subBreeds)
     }
 
-    private fun getBreedFromArgs() : DataClasses.Breed {
-        val breed: DataClasses.Breed
+    private fun getBreedFromArgs() : ServerDataClasses.Breed {
+        val breed: ServerDataClasses.Breed
         val args = arguments
-        breed = args?.get(NavigationUtils.BREED_KEY) as DataClasses.Breed
+        breed = args?.get(NavigationUtils.BREED_KEY) as ServerDataClasses.Breed
         return breed
     }
 

@@ -1,9 +1,9 @@
 package com.hadi.dogsapi
 
 import android.app.Application
-import com.hadi.dogsapi.dagger.AppComponent
-import com.hadi.dogsapi.dagger.AppModule
-import com.hadi.dogsapi.dagger.DaggerAppComponent
+import com.hadi.dogsapi.di.AppComponent
+import com.hadi.dogsapi.di.AppModule
+import com.hadi.dogsapi.di.DaggerAppComponent
 
 
 /**

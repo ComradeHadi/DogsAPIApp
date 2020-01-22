@@ -8,9 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
 import com.google.gson.JsonArray
 import com.hadi.dogsapi.R
-import com.hadi.dogsapi.data.DataClasses
-import com.hadi.dogsapi.network.DogApi
-import com.hadi.dogsapi.network.DogRepository
+import com.hadi.dogsapi.data.ServerDataClasses
 import com.hadi.dogsapi.network.DogRepositoryImpl
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -24,7 +22,7 @@ open class DetailViewModel @Inject constructor(private val dogRepository: DogRep
 
     var urlList = mutableListOf<String>()
 
-    lateinit var breed: DataClasses.Breed
+    lateinit var breed: ServerDataClasses.Breed
 
     private val urlLiveData: MutableLiveData<List<String>> by lazy {
         MutableLiveData<List<String>>().also {
