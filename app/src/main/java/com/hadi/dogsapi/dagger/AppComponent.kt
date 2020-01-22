@@ -1,4 +1,4 @@
-package com.hadi.dogsapi
+package com.hadi.dogsapi.dagger
 
 import com.hadi.dogsapi.DogApplication
 import com.hadi.dogsapi.ui.BaseFragment

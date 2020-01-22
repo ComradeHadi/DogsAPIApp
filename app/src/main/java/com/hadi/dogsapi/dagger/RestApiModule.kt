@@ -1,4 +1,4 @@
-package com.hadi.dogsapi
+package com.hadi.dogsapi.dagger
 
 import com.hadi.dogsapi.network.DogApi
 import dagger.Module

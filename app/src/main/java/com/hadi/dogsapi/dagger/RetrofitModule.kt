@@ -1,4 +1,4 @@
-package com.hadi.dogsapi
+package com.hadi.dogsapi.dagger
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.hadi.dogsapi.ApiUtils

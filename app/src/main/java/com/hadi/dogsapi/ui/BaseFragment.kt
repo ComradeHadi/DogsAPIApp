@@ -2,9 +2,9 @@ package com.hadi.dogsapi.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.hadi.dogsapi.AppComponent
 import com.hadi.dogsapi.DogApplication
-import com.hadi.dogsapi.ViewModelFactory
+import com.hadi.dogsapi.dagger.AppComponent
+import com.hadi.dogsapi.dagger.ViewModelFactory
 
 import javax.inject.Inject
 

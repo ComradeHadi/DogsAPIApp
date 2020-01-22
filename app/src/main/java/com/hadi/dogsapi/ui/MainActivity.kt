@@ -48,7 +48,10 @@ class MainActivity : BaseActivity(), BaseListAdapter.OnBreedClickListener {
     }
 
     private fun initViewModel(adapter: BreedsListAdapter) {
-        activityMainBinding.lifecycleOwner = this
+       // activityMainBinding.lifecycleOwner = this
+
+
+
 
         listViewModel = ViewModelProviders.of(this, viewModeFactory).get(ListViewModel::class.java)
         activityMainBinding.viewModel = listViewModel
